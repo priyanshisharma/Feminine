@@ -1,0 +1,209 @@
+#patient-dashboard{
+    margin: 0%;
+    color:#ff9966;
+    text-align:center;
+    font-family:'Jost', sans-serif;
+}
+
+#sub-card{
+    display:flex;
+    margin:20px 0px;
+    justify-content:center;
+}
+.dashboard-card{
+    background:white;
+    border: 1px solid #ffe885;
+    width:40%;
+    min-height:350px;
+    margin:2%;
+    box-shadow:2px 2px 5px 2px rgba(0,0,0,0.1);
+}
+.dashboard-main-card{
+    background:white;
+    border: 1px solid #ffe885;
+    width:80%;
+    min-height:300px;
+    margin:2% 10%;
+    box-shadow:2px 2px 5px 2px rgba(0,0,0,0.1);
+    padding-bottom:20px;
+}
+.dashboard-card-head{
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff6666+0,ffd65e+100 */
+    background: #ff6666; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #ff6666 0%, #ffd65e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #ff6666 0%,#ffd65e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #ff6666 0%,#ffd65e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6666', endColorstr='#ffd65e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    height:60px;
+    padding:13px 30px;
+    font-weight:600;
+    color:white;
+    font-size:28px;
+    margin:0px;
+}
+.report-list{
+    border-top:1px solid  #ffe885;
+    background: #ffdc4340;
+    border-bottom:1px solid  #ffe885;
+    padding:20px;
+    color:black;
+    margin:10px 0px;
+}
+#doctor-details{
+    display:flex;
+    justify-content:space-evenly;
+    padding-top:50px;
+}
+.prescription{
+    background: #ffdc4340;
+    border:1px solid  #ffe885;
+    width:90%;
+    margin:2% 3%;
+    border-radius:30px;
+    padding:20px;
+    color:black;
+}
+#prescription-title-input{
+    width:70%;
+    padding:20px;
+    border-radius:5px;
+    border:1px solid gray;
+    margin:20px;
+}
+
+#prescription-input{
+    width:70%;
+    padding:20px;
+    border-radius:5px;
+    border:1px solid gray;
+    margin:20px;
+}
+#lab{
+    display:flex;
+    padding:5% 10%;
+    flex-wrap:wrap;
+    height:70vh;
+}
+.lab-card{
+    width:300px;
+    height:300px;
+    background:white;
+    border-radius:20px;
+    margin:50px;
+    box-shadow:2px 2px 5px 2px rgba(0,0,0,0.1);
+}
+.lab-card-head{
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    background:#ff58c9;
+    color:white;
+    padding:10px;
+    text-align:center;
+    font-size:28px;
+    font-weight:500;
+    min-height:50px;
+}
+.lab-card p{
+    text-align:center;
+    margin:20px;
+    margin-top:50px;
+    font-size:22px;
+}
+.lab-button{
+    width:60%;
+    border-radius:20px;
+    background:#ff6666;
+    height:30px;
+    color:white;
+    text-align:center;
+    padding:7px;
+    font-size:18px;
+    cursor:pointer;
+    margin:10% 18%;
+    margin-top:15%;
+    box-shadow:2px 2px 5px 2px rgba(0,0,0,0.1);
+    
+}
+.patient-list{
+    border:1px solid #0080e8;
+    background:white;
+    width:50%;
+    border-top-left-radius:30px;
+    border-bottom-left-radius:30px;
+    box-shadow:2px 2px 5px 2px rgba(0,0,0,0.1);
+    margin:5% 25%;
+    padding:0% 2%;
+    color:#ff58c9;
+    display:flex;
+    font-size:30px;
+    align-items:center;
+    justify-content:flex-start;
+    cursor:pointer;
+}
+.patient-list img{
+    width:20%;
+    height:auto;
+}
+#pres-button{
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff58c9+33,ff6666+100 */
+    background: #ff58c9; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #ff58c9 33%, #ff6666 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #ff58c9 33%,#ff6666 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #ff58c9 33%,#ff6666 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff58c9', endColorstr='#ff6666',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    color:white;
+    width:250px;
+    border:1px solid white;
+    border-radius:30px;
+    padding:5px;
+    margin-top:20px;
+    cursor:pointer;
+}
+
+#lab-site{
+    height:90vh;
+}
+.pres-input{
+    width:25%;
+    margin:60px;
+}
+
+@media(max-width:600px){
+    #sub-card{
+        display:block;
+    }
+    .dashboard-card{
+        width:80%;
+        margin:5% 10%;
+    }
+    .dashboard-card-head{
+        height:70px;
+        font-size:24px;
+    }
+    #doctor-details{
+        display:block;
+        text-align:center;
+        padding:15px 30px;
+    }
+    #doctor-details div{
+        margin:10px;
+    }
+    .prescription{
+        width:80%;
+        margin:0% 10%;
+        margin-bottom:30px;
+        font-size:14px;
+    }
+    .patient-list{
+        width:70%;
+        margin:5% 15%;
+        font-size:18px;
+    }
+    .patient-list img{
+        width:24%;
+    }
+    .pres-input{
+        width:80%;
+    }
+}
