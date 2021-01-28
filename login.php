@@ -170,7 +170,7 @@
                             OR
                             <button type="submit" class="btn btn-danger" name="doctor">Login As Doctor</button>
                             <div class="form-floating form-field-login" style="text-align:center; margin:15px;">
-                                <a href="signup.html">New member? Click here to Sign up.</a>
+                                <a href="signup.php">New member? Click here to Sign up.</a>
                             </div>
                         </form>
                     </div>
