@@ -1,0 +1,45 @@
+#doctor{
+    margin-top:5%;
+    width:100%;
+    min-height:50vh;
+}
+
+#lab{
+    display:flex;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+    font-family:'Jost', sans-serif;
+}
+.lab-card{
+    width:25%;
+    border:1px solid #ff9966;
+    margin:3% 0px;
+    text-align:center;
+    box-shadow:2px 2px 5px 2px rgba(0,0,0,0.1);
+}
+.lab-card-head{
+    background: #ff6666; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #ff6666 0%, #ffd65e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #ff6666 0%,#ffd65e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #ff6666 0%,#ffd65e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6666', endColorstr='#ffd65e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    
+    height:50px;
+    text-align:center;
+    color:white;
+    font-size:2rem;
+}
+.lab-card p{
+    margin:5% 2%;
+    font-size:1.5rem;
+}
+
+@media(max-width:800px){
+    #lab{
+        display:block;
+    }
+    .lab-card{
+        width:70%;
+        margin:5% 15%;
+    }
+}
