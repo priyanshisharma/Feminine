@@ -67,7 +67,7 @@ $t=0;$p1=0;
     <meta name="description" content="">
     
     
-    <title>Login</title>
+    <title>Period Tracker</title>
     <link rel="stylesheet" href="styles/tracker.css">
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
     <link rel="stylesheet" href="assets/tether/tether.min.css">
