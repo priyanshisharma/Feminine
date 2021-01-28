@@ -1,0 +1,24 @@
+#Virtual Environments
+env
+venv
+
+#Database
+db.sqlite3
+
+#Cache Files
+**/__pycache__
+.env
+*.pyc
+
+debug.log
+
+#IDE
+.vscode
+.idea
+
+#uploads
+/uploads
+
+
+#mac specific
+**/.DS_Store
