@@ -1,0 +1,158 @@
+*{
+  font-family:'Jost', sans-serif;
+  margin:0;
+}
+
+#track-head{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+#track-page-img{
+    width:200px;
+}
+#track-input{
+    text-align:center;
+    border:1px solid #ff6666;
+    width:70%;
+    padding:2%;
+    margin:2% 15%;
+    box-shadow:2px 2px 5px 2px rgba(0,0,0,0.1);
+}
+
+#suggestion{
+    background:#f7dc8f;
+    width:70%;
+    margin:2% 15%;
+    box-shadow:2px 2px 5px 2px rgba(0,0,0,0.1);
+}
+#predict{
+    background: #ff6666; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #ff6666 0%, #ffd65e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #ff6666 0%,#ffd65e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #ff6666 0%,#ffd65e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6666', endColorstr='#ffd65e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    color:white;
+    width:70%;
+    margin:2% 15%;
+    padding:2%;
+    box-shadow:2px 2px 5px 2px rgba(0,0,0,0.1);
+}
+h1{
+   font-family: 'Dancing Script', cursive; 
+   color:#ff9966; 
+   font-size:3.5rem;
+}
+h2{
+    color:#ff9966;
+    padding:20px;
+}
+#predict-button{
+    width:30%;
+    margin:0px 35%;
+}
+#month{
+    padding:5px;
+    border:1px solid #ff1744;
+    border-radius:5px;
+    color:#ff1744;
+    min-width:70%;
+    margin:5% 0px;
+}
+#lab{
+    font-size:15px;
+}
+#flow{
+    width:60px;
+    margin:10px 50px;
+    margin-right:10px;
+}
+#mood{
+    width:80px;
+    margin:10px 40px;
+    margin-right:5px;
+}
+.flow-type{
+    margin-left:20px;
+    margin-right:10px;
+    width:20px;
+}
+.flow-label{
+    color:#212360;
+}
+#sug-card{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.tracker-input-box{
+    width:30%;
+}
+#card{
+    border:1px solid white;
+    padding:8px;
+    width:45%;
+    border-radius:8px;
+    background:white;
+    margin:10px;
+    text-align:center;
+}
+.head-card{
+    border:1px solid #f7dc8f;
+    padding:2px;
+    margin:5px;
+    font-family: 'Dancing Script', cursive; 
+   color:#ff6666;
+   font-weight:800;
+   font-size:2rem;
+    margin-bottom:10px;
+}
+#input-box-wrapper{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+}
+.mood-flow{
+    display:flex;
+    flex-wrap:wrap;
+     align-items:center;
+     margin:5% 0px;
+}
+
+@media(max-width:680px){
+    #track-input{
+        width:70%;
+        margin:5% 10%;
+    }
+    #month{
+        width:50%;
+        margin:0px;
+    }
+    .tracker-input-box{
+        width:90%;
+        margin:5%;
+    }
+    #predict-button{
+        width:70%;
+        margin:5% 15%;
+    }
+    #suggestion{
+        width:80%;
+        margin:2% 10%;
+    }
+    #card{
+        width:80%;
+        margin:5%;
+    }
+    #predict{
+        width:80%;
+        margin:5% 10%;
+    }
+    #input-box-wrapper{
+        display:block;
+    }
+    .mood-flow{
+        display:block;
+    }
+}
