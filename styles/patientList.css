@@ -1,0 +1,54 @@
+#patient-list-wrapper{
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:3%;
+    justify-content:space-between;
+    min-height:80vh;
+    font-family:'Jost', sans-serif;
+}
+#patient-list-wrapper-img{
+    width:30%;
+    height:auto;
+    margin:auto;
+    margin:auto 0px;
+}
+#patient-list-wrapper-img img{
+    width:100%;
+    height:auto;
+}
+#patient-list-lists{
+    width:70%;
+}
+.patient-list-item{
+    background: #ffdc4340;
+    width:90%;
+    margin:2% 5%;
+    border: 1px solid #ffe885;
+    box-shadow:2px 2px 5px 2px rgba(0,0,0,0.1);
+    padding:1%;
+}
+
+@media(max-width:800px){
+    #patient-list-wrapper{
+        display:block;
+        margin-top:10%;
+    }
+    #patient-list-wrapper-img{
+        width:100%;
+        height:auto;
+        margin:auto;
+        margin:auto 0px;
+    }
+    #patient-list-wrapper-img img{
+        width:50%;
+        height:auto;
+        margin:0px 25%;
+    }
+    #patient-list-lists{
+        width:90%;
+        margin:2% 5%;
+    }
+    .patient-list-item{
+        margin: 5%;
+    }
+}

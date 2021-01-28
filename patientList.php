@@ -11,7 +11,7 @@
     
     
     <title>Patient Dashboard</title>
-    <link rel="stylesheet" href="styles/patientDashboard.css">
+    <link rel="stylesheet" href="styles/patientList.css">
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
     <link rel="stylesheet" href="assets/tether/tether.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -74,6 +74,11 @@
         </div>
     </nav>
    </section>
+   <div id="patient-list-wrapper">
+    <div id="patient-list-wrapper-img">
+        <img src="assets/images/doctorlist.png"/>
+    </div>
+    <div id="patient-list-lists">
     <table>
         <!-- <thead>
             <tr>Patient Name</tr>
@@ -93,9 +98,9 @@
                     $id = $row['userid'];
                     $hospital ="Ram Narayan Hospital, G.E. Road, Raipur";
                     echo "
-                    <center><div class='prescription' style='width:75%'>
+                    <center><div class='patient-list-item'>
                              <center><div>
-                             <a href='./doctorDashboard.php?id=".$row['userid']."'><h2 style='color:#ff6666'>$name</h2></a>
+                             <a href='./doctorDashboard.php?id=".$row['userid']."'><h2 style='text-transform:uppercase; color:#ff6666'>$name</h2></a>
                             </div>
                             </center>
                             <center><div>$hospital</div></center>
@@ -110,6 +115,9 @@
                 echo "nahi aaya";
             }
         ?>
+        </table>
+        </div>
+    </div>
 <section class="footer3 cid-s48P1Icc8J" once="footers" id="footer3-i"><div class="container">
         <div class="media-container-row align-center mbr-white">
             
