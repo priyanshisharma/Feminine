@@ -1,0 +1,29 @@
+.login{
+    padding:3.5rem 0px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    margin:0px !important
+}
+.login-section{
+    color:#ff9966;
+    text-align:center;
+    font-family:'Jost', sans-serif;
+}
+.form-field-login{
+    color:#ff6666;
+}
+form{
+    margin:50px;
+}
+form input{
+    background-color:#fef8f2 !important;
+}
+form div{
+    text-align:left;
+    margin:40px 0px;
+}
+form button{
+    width:100%;
+}
