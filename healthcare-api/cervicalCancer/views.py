@@ -1,3 +1,97 @@
-from django.shortcuts import render
+'''This module defines APIs that maybe used for analysing the
+risk of having cervical cancer in a woman'''
+from pathlib import Path
+import pickle
+import pandas as pd
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+from drf_yasg.utils import swagger_auto_schema
+#from utils.swagger import set_example
+from .serializers import PredSerializer
+from . import responses
 
-# Create your views here.
+@swagger_auto_schema(
+        operation_id='predict_cervical_cancer',
+        method = 'post',
+        request_body=PredSerializer
+        #responses={
+        #    '200': set_example(responses.cc_200),
+        #    '400': set_example(responses.missing_value_400)
+        #},
+
+)
+@api_view(['POST'])
+def cervical_cancer(request):
+    '''
+    This API takes information about the patient as input and predicts
+    whether the person is at risk of cervical cancer by predicting the
+    result of a biopsy, schiller test, hinselmann test and citology test
+    as negative or positive.
+    '''
+    serializer = PredSerializer(data = request.data)
+
+    if serializer.is_valid():
+
+        #Preparing Data for the model
+        val = dict()
+        val["Age"] = request.data.get("age")
+        val["Number of sexual partners"] = request.data.get("number_of_sexual_partners")
+        val["First sexual intercourse"] = request.data.get("age_of_first_sexual_intercourse")
+        val["Num of pregnancies"] = request.data.get("number_of_pregnancies")
+        val["Smokes"] = request.data.get("smokes")
+        val["Smokes (years)"] = request.data.get("smokes_years")
+        val["Smokes (packs/year)"] = request.data.get("smokes_packs_per_year")
+        val["Hormonal Contraceptives"] = request.data.get("hormonal_contraceptives")
+        val["Hormonal Contraceptives (years)"] = request.data.get("hormonal_contraceptives_years")
+        val["IUD"] = request.data.get("IUD")
+        val["IUD (years)"] = request.data.get("IUD_years")
+        val["STDs"] = request.data.get("STDs")
+        val["STDs (number)"] = request.data.get("STDs_number")
+        val["STDs:condylomatosis"] = request.data.get("STDs_condylomatosis")
+        val["STDs:vaginal condylomatosis"] = request.data.get("STDs_vaginal_condylomatosis")
+        val["STDs:vulvo-perineal condylomatosis"] = request.data.get("STDs_vulvo_perineal_condylomatosis")
+        val["STDs:syphilis"] = request.data.get("STDs_syphilis")
+        val["STDs:pelvic inflammatory disease"] = request.data.get("STDs_pelvic_inflammatory_disease_")
+        val["STDs:genital herpes"] = request.data.get("STDs_genital_herpes")
+        val["STDs:molluscum contagiosum"] = request.data.get("STDs_molluscum_contagiosum")
+        val["STDs:HIV"] = request.data.get("STDs_HIV")
+        val["STDs:Hepatitis B"] = request.data.get("STDs_HepatitisB")
+        val["STDs:HPV"] = request.data.get("STDs_HPV")
+        val["STDs: Number of diagnosis"] = request.data.get("STDs_Number_of_diagnosis")
+        val["Dx:Cancer"] = request.data.get("Dx_Cancer")
+        val["Dx:CIN"] = request.data.get("Dx_CIN")
+        val["Dx:HPV"] = request.data.get("Dx_HPV")
+        val["Dx"] = request.data.get("Dx") #Dx stands for diagnosis
+        val["Column1"] = 0.0
+
+        chk = pd.DataFrame(val, index=[0])
+
+
+        return_obj = dict() #will contain predictions to be returned
+
+        #Predicting Hinselmann
+        model_hinselmann_loc = Path('./cervicalCancer/ml-models/hinselmannmodel.pkl').absolute()
+        model_hinselmann = pickle.load(open(model_hinselmann_loc, 'rb'))
+        return_obj["Hinselmann"] = model_hinselmann.predict(chk)[0]
+
+        #Predicting Citology
+        model_citology_loc = Path('./cervicalCancer/ml-models/citologymodel.pkl').absolute()
+        model_citology = pickle.load(open(model_citology_loc, 'rb'))
+        return_obj["Cytology"] = model_citology.predict(chk)[0]
+
+        #Predicting Schiller
+        model_schiller_loc = Path('./cervicalCancer/ml-models/schillermodel.pkl').absolute()
+        model_schiller = pickle.load(open(model_schiller_loc, 'rb'))
+        return_obj["Schiller"] = model_schiller.predict(chk)[0]
+
+        #Predicting Biopsy
+        model_biopsy_loc = Path('./cervicalCancer/ml-models/biopsymodel.pkl').absolute()
+        model_biopsy = pickle.load(open(model_biopsy_loc, 'rb'))
+        return_obj["Biopsy"] = model_biopsy.predict(chk)[0]
+
+
+        return Response(return_obj, status.HTTP_200_OK)
+
+    return_obj = serializer.errors
+    return Response(return_obj, status.HTTP_400_BAD_REQUEST)
