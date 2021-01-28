@@ -9,7 +9,7 @@
     <meta name="description" content="">
     
     
-    <title>Login</title>
+    <title>Signup</title>
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
     <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -24,6 +24,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
  </head>
+ <?php
+  
+  session_start();
+  if(isset($_POST['doctor'])){
+    
+    require_once('./config.php');
+    $email=$_POST['email'];
+    $u_name= $_POST['u_name'];
+    $pass= $_POST['pass'];
+    $uid= uniqid($u_name);
+    $occupation= "doctor";
+    $securepass= crypt($pass,$u_name);
+    $sql= "INSERT INTO `feminine`.`users` (`userid`, `username`, `password`, `email`, `occupation`) VALUES ('$uid', '$u_name', '$securepass', '$email', '$occupation');";
+    if($con->query($sql) == true){
+      echo "<br><br><br><h3 style='margin-left:400px;margin-top:20px;color:green' >You have successfully registered<a href='login.php'>Go back to Login Page</a></h3>";
+      
+  }
+  else{
+     echo "ERROR: $con->error";
+  }
+  $con->close();
+
+  }
+
+  if(isset($_POST['patient'])){
+    require_once('./config.php');
+    $email=$_POST['email'];
+    $u_name= $_POST['u_name'];
+    $pass= $_POST['pass'];
+    $uid= uniqid($u_name);
+    $occupation= "patient";
+    $securepass= crypt($pass,$u_name);
+    $sql= "INSERT INTO `feminine`.`users` (`userid`, `username`, `password`, `email`, `occupation`) VALUES ('$uid', '$u_name', '$securepass', '$email', '$occupation');";
+    if($con->query($sql) == true){
+      echo "<br><br><br><h3 style='margin-left:400px;margin-top:20px;color:green' >You have successfully registered<a href='login.php'>Go back to Login Page</a></h3>";
+      
+  }
+  else{
+     echo "ERROR: $con->error";
+  }
+  $con->close();
+
+  }
+?>
 <body>
   
   <section class="menu cid-s48OLK6784" once="menu" id="menu1-h">
@@ -33,7 +77,7 @@
             <div class="navbar-brand">
                 <span class="navbar-logo">
                     <a href="index.html">
-                        <img src="assets/images/feminine-1-335x335.png" alt="signup" style="height: 5rem;">
+                        <img src="assets/images/feminine-1-335x335.png" alt="Mobirise" style="height: 5rem;">
                     </a>
                 </span>
             </div>
@@ -48,25 +92,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="index.html#features1-n">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="index.html#tabs1-p">AI Tools</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="">Dashboard</a>
+                        <a class="nav-link link text-black display-4" href="https://mobirise.com">Menu Item 1</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Book</a>
+                        <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Menu Item 1</a>
                         <div class="dropdown-menu">
-                            <a class="text-black dropdown-item display-4" href="">Lab Appointment</a>
-                            <a class="text-black dropdown-item display-4" href="">Expert Consultancy</a>
+                            <a class="text-black dropdown-item display-4" href="https://mobirise.com">New Item</a>
+                            <a class="text-black dropdown-item display-4" href="https://mobirise.com">New Item</a>
+                            <a class="text-black dropdown-item display-4" href="https://mobirise.com">New Item</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="">Period Tracker</a>
+                        <a class="nav-link link text-black display-4" href="https://mobirise.com">Menu Item 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-black display-4" href="https://mobirise.com">Menu Item 2</a>
                     </li>
                 </ul>
+                
             </div>
         </div>
     </nav>
@@ -84,24 +127,24 @@
                         <strong style="font-family: 'Dancing Script', cursive; ">Sign Up</strong>
                     </h3>
                 <div>
-                        <form>
+                        <form method="post" id="signupForm">
                             <div class="form-floating form-field-login">
                                 <label for="name">Name</label>
-                                <input type="name" class="form-control" id="floatingInput" placeholder="Name">
+                                <input type="name" class="form-control" id="u_name" placeholder="Name" name="u_name">
                             </div>
                             <div class="form-floating form-field-login">
                                 <label for="email">Email Address</label>
-                                <input type="email" class="form-control" id="floatingInput" placeholder="Email Address">
+                                <input type="email" class="form-control" id="email" placeholder="Email Address" name="email">
                             </div>
-                            <div class="form-floating form-field-login"">
+                            <div class="form-floating form-field-login">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                             </div>
-                            <button type="submit" class="btn btn-danger">Sign Up As Patient</button>
+                            <button type="submit" class="btn btn-danger" name="patient" id="patient">Sign Up As Patient</button>
                             OR
-                            <button type="submit" class="btn btn-danger">Sign Up As Doctor</button>
+                            <button type="submit" class="btn btn-danger" name="doctor" id="doctor">Sign Up As Doctor</button>
                             <div class="form-floating form-field-login" style="text-align:center; margin:15px;">
-                                <a href="login.html">Already a member? Click here to Login.</a>
+                                <a href="login.php">Already a member? Click here to Login.</a>
                             </div>
                         </form>
                     </div>
@@ -117,7 +160,7 @@
             <div class="row social-row">
                 <div class="social-list align-right pb-2">
                     <div class="soc-item">
-                        <a href="https://github.com/priyanshisharma/Feminine" target="_blank">
+                        <a href="https://twitter.com/mobirise" target="_blank">
                             <span class="mbr-iconfont mbr-iconfont-social socicon-github socicon"></span>
                         </a>
                     </div>
@@ -145,4 +188,10 @@
   
   
 </body>
+<!-- <script>
+    $("#signupForm").submit(function(e){
+        e.preventDefault();
+        console.log("aaya");
+    })
+</script> -->
 </html>

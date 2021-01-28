@@ -1,3 +1,76 @@
+<?php
+    session_start();
+    if(isset($_POST['doctor'])){
+        require_once('config.php');
+        // $server= "localhost";
+        // $username="root";
+        // $password="";
+        // $con= mysqli_connect($server,$username,$password,'sashakti');
+        $u_name= $_POST['u_name'];
+        $pass= $_POST['pass'];
+        $password1= crypt($pass,$u_name);
+        $query = "SELECT * FROM users where username='$u_name'";
+        $result = $con->query($query);
+   
+  
+        $row= $result->fetch_array();
+        if($row['username']!= $u_name){
+     
+            echo "<p style='color:red'>No such user</p>";
+          }
+          else{
+            if($row['password']== $password1 ){
+              
+              header('location: ./patientList.php');
+              $_SESSION['username']= $row['username'];
+              $_SESSION['id']=$row['userid'];
+            }
+            else{
+              
+              echo "<h3>Incorrect Password</h3>";
+            }
+          }
+          
+        
+          $con->close();
+        
+    }
+    if(isset($_POST['patient'])){
+        require_once('config.php');
+        // $server= "localhost";
+        // $username="root";
+        // $password="";
+        // $con= mysqli_connect($server,$username,$password,'sashakti');
+        $u_name= $_POST['u_name'];
+        $pass= $_POST['pass'];
+        $password1= crypt($pass,$u_name);
+        $query = "SELECT * FROM users where username='$u_name'";
+        $result = $con->query($query);
+   
+  
+        $row= $result->fetch_array();
+        if($row['username']!= $u_name){
+     
+            echo "<p style='color:red'>No such user</p>";
+          }
+          else{
+            if($row['password']== $password1 ){
+              
+              header('location: ./patientDashboard.php');
+              $_SESSION['username']= $row['username'];
+              $_SESSION['id']=$row['userid'];
+            }
+            else{
+              
+              echo "<h3>Incorrect Password</h3>";
+            }
+          }
+          
+        
+          $con->close();
+        
+    }
+?>
 <!DOCTYPE html>
 <html  >
   <head>
@@ -24,16 +97,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
  </head>
+ 
 <body>
   
- <section class="menu cid-s48OLK6784" once="menu" id="menu1-h">
+  <section class="menu cid-s48OLK6784" once="menu" id="menu1-h">
     
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
         <div class="container-fluid">
             <div class="navbar-brand">
                 <span class="navbar-logo">
                     <a href="index.html">
-                        <img src="assets/images/feminine-1-335x335.png" alt="login" style="height: 5rem;">
+                        <img src="assets/images/feminine-1-335x335.png" alt="Mobirise" style="height: 5rem;">
                     </a>
                 </span>
             </div>
@@ -48,29 +122,28 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="index.html#features1-n">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="index.html#tabs1-p">AI Tools</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="">Dashboard</a>
+                        <a class="nav-link link text-black display-4" href="https://mobirise.com">Menu Item 1</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Book</a>
+                        <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Menu Item 1</a>
                         <div class="dropdown-menu">
-                            <a class="text-black dropdown-item display-4" href="">Lab Appointment</a>
-                            <a class="text-black dropdown-item display-4" href="">Expert Consultancy</a>
+                            <a class="text-black dropdown-item display-4" href="https://mobirise.com">New Item</a>
+                            <a class="text-black dropdown-item display-4" href="https://mobirise.com">New Item</a>
+                            <a class="text-black dropdown-item display-4" href="https://mobirise.com">New Item</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="">Period Tracker</a>
+                        <a class="nav-link link text-black display-4" href="https://mobirise.com">Menu Item 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-black display-4" href="https://mobirise.com">Menu Item 2</a>
                     </li>
                 </ul>
+                
             </div>
         </div>
     </nav>
-    </section>
+   </section>
 
 
    <section class="image1 login-section" id="image1-m" style="padding:0px 10%;">
@@ -84,18 +157,18 @@
                         <strong style="font-family: 'Dancing Script', cursive; ">Log In</strong>
                     </h3>
                 <div>
-                        <form>
+                        <form method="post">
                             <div class="form-floating form-field-login">
-                                <label for="email">Email Address</label>
-                                <input type="email" class="form-control" id="floatingInput" placeholder="Email Address">
+                                <label for="u_name">Name</label>
+                                <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="u_name">
                             </div>
-                            <div class="form-floating form-field-login"">
+                            <div class="form-floating form-field-login">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
                             </div>
-                            <button type="submit" class="btn btn-danger">Login As Patient</button>
+                            <button type="submit" class="btn btn-danger" name="patient">Login As Patient</button>
                             OR
-                            <button type="submit" class="btn btn-danger">Login As Doctor</button>
+                            <button type="submit" class="btn btn-danger" name="doctor">Login As Doctor</button>
                             <div class="form-floating form-field-login" style="text-align:center; margin:15px;">
                                 <a href="signup.html">New member? Click here to Sign up.</a>
                             </div>
@@ -113,7 +186,7 @@
             <div class="row social-row">
                 <div class="social-list align-right pb-2">
                     <div class="soc-item">
-                        <a href="https://github.com/priyanshisharma/Feminine" target="_blank">
+                        <a href="https://twitter.com/mobirise" target="_blank">
                             <span class="mbr-iconfont mbr-iconfont-social socicon-github socicon"></span>
                         </a>
                     </div>
