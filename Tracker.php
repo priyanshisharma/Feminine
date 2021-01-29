@@ -217,7 +217,7 @@ $t=0;$p1=0;
             <div id="sug-card">
                 <div id="card">
                     <p class="head-card">Dietary Suggestions</p>
-                    <p>This is the workout suggestion for you.</p><br/>
+                    <p>These are the dietary suggestions for you.</p><br/>
                     <?php 
                         if($t==0 && $p1==0)    echo "Please fill the form";
                         else{
