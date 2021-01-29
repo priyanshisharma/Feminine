@@ -22,6 +22,12 @@ Feminine is an initiative through which we want to create an all-in-one women he
 
 ### Web Technology
 
+- Machine Learning
+  - Python - Sklearn, Keras, Tensorflow etc. for the ML Model(s)
+  - Microsoft Azure Machine Learning Studio for the ML Model(s)
+  - Django REST Framework (for Model Endpoints)
+
+
 - Frontend
   - HTML
   - CSS
