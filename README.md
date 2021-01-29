@@ -60,21 +60,18 @@ git clone https://github.com/priyanshisharma/Feminine.git
 ```
 - Go to the directory where Xampp is installed. For eg. C:\xampp\htdocs
 - Copy the project folder and paste it in the address mentioned above.
+- Open PhpMyAdmin, create a database named 'feminine' and import the feminine.sql file from the db folder present in the repo.
 - Launch any browser window and search localhost/Feminine.
 
 ## Screenshots
 
 <img src="screenshots/Capture.PNG" width="300">
 <img src="screenshots/AItools.PNG" width="300">
-<img src="screenshot/1.jpeg" width="300">
-<img src="screenshot/2.png" width="300">
-<img src="screenshot/3.png" width="300">
-<img src="screenshot/4.png" width="300">
-<img src="screenshot/5.png" width="300">
-<img src="screenshot/6.png" width="300">
-<img src="screenshot/7.png" width="300">
-<img src="screenshot/8.jpeg" width="300">
-<img src="screenshot/9.jpeg" width="300">
+<img src="screenshots/consult.PNG" width="300">
+<img src="screenshots/features.PNG" width="300">
+<img src="screenshots/trackerss.png" width="300">
+<img src="screenshots/videocall.PNG" width="300">
+
 
 
 ## Team HackDivas

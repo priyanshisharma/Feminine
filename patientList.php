@@ -36,7 +36,7 @@
         <div class="container-fluid">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="assets/images/feminine-1-335x335.png" alt="login" style="height: 5rem;">
                     </a>
                 </span>
@@ -52,10 +52,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="index.html#features1-n">Features</a>
+                        <a class="nav-link link text-black display-4" href="index.php#features1-n">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="index.html#tabs1-p">AI Tools</a>
+                        <a class="nav-link link text-black display-4" href="index.php#tabs1-p">AI Tools</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link text-black display-4" href="signup.php">Dashboard</a>
@@ -63,7 +63,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Book</a>
                         <div class="dropdown-menu">
-                            <a class="text-black dropdown-item display-4" href="">Lab Appointment</a>
+                            <a class="text-black dropdown-item display-4" href="labs.html">Lab Appointment</a>
                             <a class="text-black dropdown-item display-4" href="consult-doc.html">Expert Consultancy</a>
                         </div>
                     </li>
