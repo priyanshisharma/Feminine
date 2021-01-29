@@ -10,6 +10,7 @@
     
     
     <title>Feminine</title>
+    <link rel="stylesheet" href="styles/pcosTool.css">
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
     <link rel="stylesheet" href="assets/tether/tether.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -240,7 +241,7 @@
                     <div id="tab1" class="tab-pane in active" role="tabpanel">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-8" style=" margin: auto;">
+                                <div class="col-md-8 breast-tool" style=" margin: auto;">
                                     <p style="font-size: 20px;">
                                         We analyse the hispathological image i.e. images of glass tissue slides under a microscope, here tissue samples from lymph 
                                         nodes in order to detect breast cancer. We will be analysing tissues for:
@@ -310,9 +311,139 @@
                     <div id="tab3" class="tab-pane" role="tabpanel">
                         <div class="row">
                             <div class="col-md-12">
-                                <p class="mbr-text mbr-fonts-style display-7">
-                                    AI tool to detect PCOS
-                                </p>
+                                <div id="pcos-form">
+                                    <div>
+                                        <h5>How would you describe the regularity of your periods?</h5>
+                                        <input type="radio" name="regularity" class="ques-radio" value="y">
+                                        <label class="ques-label">Regular</label>
+                                        <input type="radio" name="regularity" class="ques-radio" value="im">
+                                        <label class="ques-label" >Infrequent Menses</label>
+                                        <input type="radio" name="regularity" class="ques-radio" value="ib">
+                                        <label class="ques-label" >Irregular Bleeding</label>
+                                        <input type="radio" name="regularity" class="ques-radio" value="hb">
+                                        <label class="ques-label" >Heavy Bleeding</label>
+                                    </div>
+                                    <div>
+                                        <h5>Have you experienced rapid weight gain?</h5>
+                                        <input type="radio" name="weight" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="weight" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Have you experienced excess hair growth on face, neck or chest?</h5>
+                                        <input type="radio" name="hair" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="hair" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you have dark patches on skin?</h5>
+                                        <input type="radio" name="dark" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="dark" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you have pimples often?</h5>
+                                        <input type="radio" name="pimples" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="pimples" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you suffer from depression and anxiety?</h5>
+                                        <input type="radio" name="dora" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="dora" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you have a family history of diabetes or hypertension?</h5>
+                                        <input type="radio" name="history" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="history" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you face difficulty in maintaining a constant body weight?</h5>
+                                        <input type="radio" name="flow" class="ques-radio" value="n">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="flow" class="ques-radio" value="y">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you have oily skin?</h5>
+                                        <input type="radio" name="oliy" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="oily" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you face hairfall?</h5>
+                                        <input type="radio" name="hair" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="hair" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Which of the following is your frequent food intake?</h5>
+                                        <input type="radio" name="food" class="ques-radio" value=hm">
+                                        <label class="ques-label">Food prepared at home</label>
+                                        <input type="radio" name="food" class="ques-radio" value="cc">
+                                        <label class="ques-label" >Outside food</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you exercise regularly?</h5>
+                                        <input type="radio" name="exc" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="exc" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you experience mental stress due to any recent changes in your life?</h5>
+                                        <input type="radio" name="change" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="change" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you experience mental stress due to any personal problems?</h5>
+                                        <input type="radio" name="prob" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="prob" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you experience mental stress due to peer pressure?</h5>
+                                        <input type="radio" name="peer" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="peer" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>Do you experience mental stress due to any change in dietary habits?</h5>
+                                        <input type="radio" name="diet" class="ques-radio" value="y">
+                                        <label class="ques-label">Yes</label>
+                                        <input type="radio" name="diet" class="ques-radio" value="n">
+                                        <label class="ques-label" >No</label>
+                                    </div>
+                                    <div>
+                                        <h5>How frequent is your fast-food intake?</h5>
+                                        <input type="radio" name="fast" class="ques-radio" value="ed">
+                                        <label class="ques-label">Every Day</label>
+                                        <input type="radio" name="fast" class="ques-radio" value="w">
+                                        <label class="ques-label" >Once in a week</label>
+                                        <input type="radio" name="fast" class="ques-radio" value="m">
+                                        <label class="ques-label" >Once in a month</label>
+                                        <input type="radio" name="fast" class="ques-radio" value="y">
+                                        <label class="ques-label" >Once in a year</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-danger" id="predict-button" name="pcos-predict">Predict PCOS Possibility</button>
+                                </div>
+                                <div class="prediction-result">
+                                    <p>Please submit the form above to get a prediction.</p>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,65 @@
+#pcos-form{
+    width:80%;
+    margin:0px 10%;
+    border: 1px solid #ffdc4340;
+    padding:3%;
+    font-family:'Jost', sans-serif;
+}
+#pcos-form h5{
+    color:#ff6666;
+    font-weight:700;
+}
+#pcos-form div{
+    background:#fff4dbde;
+    margin:2%;
+    border-left:5px solid #ff9966;
+    padding:10px;
+}
+.ques-radio{
+    margin-left:20px;
+}
+.ques-radio:hover{
+    color:#ff9966;
+    cursor:pointer;
+}
+.ques-label{
+    font-size:1.2rem;
+}
+.ques-label:hover{
+    color:#ff9966;
+    cursor:pointer;
+}
+#predict-button{
+    width:60%;
+    margin:2% 20%;
+}
+.prediction-result{
+     background: #ff6666; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #ff6666 0%, #ffd65e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #ff6666 0%,#ffd65e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #ff6666 0%,#ffd65e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6666', endColorstr='#ffd65e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    color:white;
+    padding:3%;
+    text-align:center;
+    font-size:2rem;
+    font-family:'Jost', sans-serif;
+}
+
+@media(max-width:890px){
+    #pcos-form{
+        width:95%;
+        margin:0px 2.5%;
+    }
+    #pcos-form div{
+        margin:5% 2%;
+    }
+    #predict-button{
+        width:80%;
+        margin:4% 10%;
+    }
+    .prediction-result{
+        font-size:1.5rem;
+    }
+}
