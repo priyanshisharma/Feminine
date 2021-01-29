@@ -26,3 +26,14 @@ Feminine is an initiative through which we want to create an all-in-one women he
 - For Patient
   - Username - patient
   - Password - patient
+
+## Instructions to Install and Setup:
+
+- Download and Install Xampp using link  :- https://www.apachefriends.org/download.html
+- Download the Zip or clone the repository using command : -
+``` bash
+git clone https://github.com/priyanshisharma/Feminine.git
+```
+- Go to the directory where Xampp is installed. For eg. C:\xampp\htdocs
+- Copy the project folder and paste it in the address mentioned above.
+- Launch any browser window and search localhost/Feminine.
