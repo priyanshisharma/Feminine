@@ -37,3 +37,11 @@ git clone https://github.com/priyanshisharma/Feminine.git
 - Go to the directory where Xampp is installed. For eg. C:\xampp\htdocs
 - Copy the project folder and paste it in the address mentioned above.
 - Launch any browser window and search localhost/Feminine.
+
+## Team HackDivas
+
+* Priyanshi Sharma
+* Anjali Patle
+* Sakshi Bhandarkar
+
+### More power to women!
