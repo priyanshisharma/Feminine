@@ -20,7 +20,7 @@ Feminine is an initiative through which we want to create an all-in-one women he
 
 ## Technology Stack
 
-### Web Technology
+### Artificial Intelligence & Web Technology
 
 - Machine Learning
   - Python - Sklearn, Keras, Tensorflow etc. for the ML Model(s)
