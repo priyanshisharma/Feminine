@@ -112,17 +112,17 @@ $t=0;$p1=0;
                         <a class="nav-link link text-black display-4" href="index.html#tabs1-p">AI Tools</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="">Dashboard</a>
+                        <a class="nav-link link text-black display-4" href="signup.php">Dashboard</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Book</a>
                         <div class="dropdown-menu">
                             <a class="text-black dropdown-item display-4" href="">Lab Appointment</a>
-                            <a class="text-black dropdown-item display-4" href="">Expert Consultancy</a>
+                            <a class="text-black dropdown-item display-4" href="consult-doc.html">Expert Consultancy</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="">Period Tracker</a>
+                        <a class="nav-link link text-black display-4" href="Tracker.php">Period Tracker</a>
                     </li>
                 </ul>
             </div>
