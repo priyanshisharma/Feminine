@@ -33,7 +33,7 @@
         <div class="container-fluid">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="assets/images/feminine-1-335x335.png" alt="Mobirise" style="height: 5rem;">
                     </a>
                 </span>

@@ -57,7 +57,7 @@
         <div class="container-fluid">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="assets/images/feminine-1-335x335.png" alt="login" style="height: 5rem;">
                     </a>
                 </span>
@@ -73,10 +73,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="index.html#features1-n">Features</a>
+                        <a class="nav-link link text-black display-4" href="index.php#features1-n">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="index.html#tabs1-p">AI Tools</a>
+                        <a class="nav-link link text-black display-4" href="index.php#tabs1-p">AI Tools</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link text-black display-4" href="signup.php">Dashboard</a>
