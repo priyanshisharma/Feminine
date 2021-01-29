@@ -33,3 +33,28 @@ class PredSerializer(serializers.Serializer):
     Dx_CIN= serializers.CharField(allow_blank=False)
     Dx_HPV= serializers.CharField(allow_blank=False)
     Dx = serializers.CharField(allow_blank=False)
+
+
+class PCOSSerializer(serializers.Serializer):
+    '''This serializer takes in information required to
+    risk of PCOS.'''
+
+    regular_periods = serializers.CharField(allow_blank=False)
+    rapid_weight_gain =  serializers.CharField(allow_blank=False)
+    excess_hair = serializers.CharField(allow_blank=False)
+    dark_patches = serializers.CharField(allow_blank=False)
+    pimples = serializers.CharField(allow_blank=False)
+    depression_and_anxiety = serializers.CharField(allow_blank=False)
+    diabetic_hypertension_family_history =serializers.CharField(allow_blank=False)
+    body_weight_maintain_difficulty = serializers.CharField(allow_blank=False)
+    oily_skin = serializers.CharField(allow_blank=False)
+    hair_strength_loss = serializers.CharField(allow_blank=False)
+    eat_frequency = serializers.CharField(allow_blank=False)
+    regular_excercise = serializers.CharField(allow_blank=False)
+    sleep_time = serializers.CharField(allow_blank=False)
+    wake_time = serializers.CharField(allow_blank=False)
+    hostel_stress = serializers.CharField(allow_blank=False)
+    personal_stress = serializers.CharField(allow_blank=False)
+    peer_pressure = serializers.CharField(allow_blank=False)
+    dietary_stress = serializers.CharField(allow_blank=False)
+    fast_food_frequency = serializers.CharField(allow_blank=False)

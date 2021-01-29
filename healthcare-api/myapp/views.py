@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from drf_yasg.utils import swagger_auto_schema
 #from utils.swagger import set_example
-from .serializers import PredSerializer
+from .serializers import PredSerializer, PCOSSerializer
 from . import responses
 
 @swagger_auto_schema(
@@ -71,25 +71,61 @@ def cervical_cancer(request):
         return_obj = dict() #will contain predictions to be returned
 
         #Predicting Hinselmann
-        model_hinselmann_loc = Path('./cervicalCancer/ml-models/hinselmannmodel.pkl').absolute()
+        model_hinselmann_loc = Path('./myapp/ml-models/hinselmannmodel.pkl').absolute()
         model_hinselmann = pickle.load(open(model_hinselmann_loc, 'rb'))
         return_obj["Hinselmann"] = model_hinselmann.predict(chk)[0]
 
         #Predicting Citology
-        model_citology_loc = Path('./cervicalCancer/ml-models/citologymodel.pkl').absolute()
+        model_citology_loc = Path('./myapp/ml-models/citologymodel.pkl').absolute()
         model_citology = pickle.load(open(model_citology_loc, 'rb'))
         return_obj["Cytology"] = model_citology.predict(chk)[0]
 
         #Predicting Schiller
-        model_schiller_loc = Path('./cervicalCancer/ml-models/schillermodel.pkl').absolute()
+        model_schiller_loc = Path('./myapp/ml-models/schillermodel.pkl').absolute()
         model_schiller = pickle.load(open(model_schiller_loc, 'rb'))
         return_obj["Schiller"] = model_schiller.predict(chk)[0]
 
         #Predicting Biopsy
-        model_biopsy_loc = Path('./cervicalCancer/ml-models/biopsymodel.pkl').absolute()
+        model_biopsy_loc = Path('./myapp/ml-models/biopsymodel.pkl').absolute()
         model_biopsy = pickle.load(open(model_biopsy_loc, 'rb'))
         return_obj["Biopsy"] = model_biopsy.predict(chk)[0]
 
+
+        return Response(return_obj, status.HTTP_200_OK)
+
+    return_obj = serializer.errors
+    return Response(return_obj, status.HTTP_400_BAD_REQUEST)
+
+@swagger_auto_schema(
+        operation_id='predict_pcos',
+        method = 'post',
+        request_body=PCOSSerializer
+        #responses={
+        #    '200': set_example(responses.cc_200),
+        #    '400': set_example(responses.missing_value_400)
+        #},
+
+)
+@api_view(['POST'])
+def pcos(request):
+    '''
+    This API takes information about the suspect as input and predicts
+    whether the person is at risk of pcos or not.
+    '''
+    serializer = PCOSSerializer(data = request.data)
+
+    if serializer.is_valid():
+        chk = dict(request.data)
+        chk["Column1"] = 0.0
+        chk = pd.DataFrame(chk, index=[0])
+
+
+        return_obj = dict() #will contain predictions to be returned
+
+        #Predicting
+        model_pcos_loc = Path('./myapp/ml-models/pcosmodel.pkl').absolute()
+        model_pcos = pickle.load(open(model_pcos_loc, 'rb'))
+        return_obj["pcos"] = model_pcos.predict(chk)[0]
 
         return Response(return_obj, status.HTTP_200_OK)
 
