@@ -336,7 +336,7 @@
                                         presence or extent of a disease.
                                     </li>
                                 </ul>
-                                <div class="pcos-form">
+                                <form class="pcos-form" method="post">
                                     <div>
                                         <h5>Age:</h5>
                                         <input type="number" name="age"  class="ques-number" >
@@ -360,7 +360,7 @@
                                         <h5>Number of years for which you have been smoking:</h5>
                                         <input type="number" name="smoke_years" class="ques-number">
                                         <h5>Number of packets of cigarettes you smoke per year:</h5>
-                                        <input type="number" name="smoke_years" class="ques-number">
+                                        <input type="number" name="smoke_yearss" class="ques-number">
                                     </div>
                                     <div>
                                         <h5>Do you take any hormonal contraceptives?</h5>
@@ -479,10 +479,136 @@
                                         <input type="radio" name="otherD" class="ques-radio" value="0">
                                         <label class="ques-label" >No</label>
                                     </div>
-                                    <button type="submit" class="btn btn-danger" id="predict-button" name="pcos-predict">Predict Possibility Of Cervical Cancer</button>
-                                </div>
+                                    <button type="submit" class="btn btn-danger" id="cervical-predict" name="cervical-predict">Predict Possibility Of Cervical Cancer</button>
+                                </form>
                                 <div class="prediction-result">
-                                    <p>Please submit the form above to get a prediction.</p>
+                                    <!-- <p>Please submit the form above to get a prediction.</p> -->
+                                    <?php
+                                // $json1=0;
+    if(isset($_POST['cervical-predict'])){
+       
+      $o1= $_POST['age'];
+      $o2= $_POST['sexual_no'];
+      $o3= $_POST['sexual_age'];
+      $o4= $_POST['preg_no'];
+      $o5= $_POST['smoke'];
+      $o6= $_POST['smoke_years'];
+      $o60= $_POST['smoke_yearss'];
+      $o7= $_POST['h_cont'];
+      $o8= $_POST['h_cont_years'];
+      $o9= $_POST['IUD'];
+      $o10= $_POST['IUD_years'];
+      $o11= $_POST['STD'];
+      $o12= $_POST['STD_no'];
+      $o13= $_POST['STD_c'];
+      $o14= $_POST['STD_vc'];
+      $o15= $_POST['STD_vpc'];
+      $o16= $_POST['STD_sy'];
+      $o17= $_POST['STD_pid'];
+      $o18= $_POST['STD_hp'];
+      $o19= $_POST['STD_mc'];
+      $o20= $_POST['STD_hiv'];
+      $o21= $_POST['STD_hptb'];
+      $o22= $_POST['STD_hpv'];
+      $o23= $_POST['STD_noD'];
+      $o24= $_POST['cancerE'];
+      $o25= $_POST['CIND'];
+      $o26= $_POST['HPVD'];
+      $o27= $_POST['otherD'];
+      
+      
+     
+       $json2 =  file_get_contents('https://3ff03eccff14.ngrok.io/cervicalcancer/', false, stream_context_create([
+        'http' => [
+            'method' => 'POST',
+            'header'  => "Content-type: application/x-www-form-urlencoded",
+            'content' => http_build_query([
+    
+                "age"=> $o1,
+                "number_of_sexual_partners"=> $o2,
+                "age_of_first_sexual_intercourse"=> $o3,
+                "number_of_pregnancies"=> $o4,
+                "smokes"=> $o5,
+                "smokes_years"=> $o6,
+                "smokes_packs_per_year"=> $o60,
+                "hormonal_contraceptives"=> $o7,
+                "hormonal_contraceptives_years"=> $o8,
+                "IUD"=> $o9,
+                "IUD_years"=> $o10,
+                "STDs"=> $o11,
+                "STDs_number"=> $o12,
+                "STDs_condylomatosis"=> $o13,
+                "STDs_vaginal_condylomatosis"=> $o14,
+                "STDs_vulvo_perineal_condylomatosis"=> $o15,
+                "STDs_syphilis"=> $o16,
+                "STDs_pelvic_inflammatory_disease_"=> $o17,
+                "STDs_genital_herpes"=> $o18,
+                "STDs_molluscum_contagiosum"=> $o19,
+                "STDs_HIV"=> $o20,
+                "STDs_HepatitisB"=> $o21,
+                "STDs_HPV"=> $o22,
+                "STDs_Number_of_diagnosis"=> $o23,
+                "Dx_Cancer"=> $o24,
+                "Dx_CIN"=> $o25,
+                "Dx_HPV"=> $o26,
+                "Dx"=> $o27
+                
+                
+    
+            ])
+        ]
+    ]));
+
+    
+    $yummy = json_decode($json2);
+        if ($yummy->Hinselmann=='0.0') {
+           echo "<p>Hinselmann is predicted to be negetive</p>";
+        }
+       
+        elseif ($yummy->Hinselmann =='1.0') {
+           echo "<p>Hinselmann is predicted to be positive</p>";
+        }
+
+        if ($yummy->Cytology=='0.0') {
+            echo "<p>Cytology is predicted to be negetive</p>";
+         }
+        
+         elseif ($yummy->Cytology =='1.0') {
+            echo "<p>Cytology is predicted to be positive</p>";
+         }
+         if ($yummy->Schiller=='0.0') {
+            echo "<p>Schiller is predicted to be negetive</p>";
+         }
+        
+         elseif ($yummy->Schiller =='1.0') {
+            echo "<p>Schiller is predicted to be positive</p>";
+         }
+         if ($yummy->Biopsy=='0.0') {
+            echo "<p>You may not require Biopsy</p>";
+         }
+        
+         elseif ($yummy->Biopsy =='1.0') {
+            echo "<p>You may require Biopsy</p>";
+         }
+
+    }
+     
+    else{
+        echo "<p>Please submit the form above to get a prediction.</p>";
+    }
+   
+    // else {
+    //     $yummy = json_decode($json1);
+    //     if ($yummy->pcos=='mb n') {
+    //        echo "<p>You may not be at the risk of PCOS</p>";
+    //     }
+       
+    //     elseif ($yummy->pcos == 'mb y') {
+    //        echo "<p>You may be at the risk of PCOS</p>";
+    //     }
+     
+
+?>
                                 </div>
                             </div>
                         </div>
