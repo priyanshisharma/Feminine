@@ -652,7 +652,7 @@
       $o16= $_POST['diet'];
       $o17= $_POST['fast'];
       
-      $var = 'y';
+      
      
        $json1 =  file_get_contents('https://3ff03eccff14.ngrok.io/pcos/', false, stream_context_create([
         'http' => [
