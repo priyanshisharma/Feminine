@@ -17,3 +17,12 @@ Feminine is an initiative through which we want to create an all-in-one women he
 * Menstrual Cycle Tracker
 * Booking Lab/Appointment
 * Video Conferencing for expert consultancy
+
+### Sample User Credentials
+- For Doctor
+  - Username - doctor
+  - Password - doctor
+
+- For Patient
+  - Username - patient
+  - Password - patient
