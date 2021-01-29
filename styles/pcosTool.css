@@ -21,6 +21,9 @@
     color:#ff9966;
     cursor:pointer;
 }
+.ques-number{
+    margin-bottom:20px;
+}
 .ques-label{
     font-size:1.2rem;
 }
