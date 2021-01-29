@@ -60,6 +60,7 @@ git clone https://github.com/priyanshisharma/Feminine.git
 ```
 - Go to the directory where Xampp is installed. For eg. C:\xampp\htdocs
 - Copy the project folder and paste it in the address mentioned above.
+- Open PhpMyAdmin, create a database named 'feminine' and import the feminine.sql file from the db folder present in the repo.
 - Launch any browser window and search localhost/Feminine.
 
 ## Screenshots
