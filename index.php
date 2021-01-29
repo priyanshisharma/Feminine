@@ -499,7 +499,7 @@
                                     Fill the information below and leave it to our machine learning model to tell you whether 
                                     you're at risk of PCOS or not.
                                 </p>
-                                <div class="pcos-form">
+                                <form class="pcos-form" method="post">
                                     <div>
                                         <h5>How would you describe the regularity of your periods?</h5>
                                         <input type="radio" name="regularity" class="ques-radio" value="y">
@@ -562,16 +562,16 @@
                                     </div>
                                     <div>
                                         <h5>Do you have oily skin?</h5>
-                                        <input type="radio" name="oliy" class="ques-radio" value="y">
+                                        <input type="radio" name="oily" class="ques-radio" value="y">
                                         <label class="ques-label">Yes</label>
                                         <input type="radio" name="oily" class="ques-radio" value="n">
                                         <label class="ques-label" >No</label>
                                     </div>
                                     <div>
                                         <h5>Do you face hairfall?</h5>
-                                        <input type="radio" name="hair" class="ques-radio" value="y">
+                                        <input type="radio" name="hairf" class="ques-radio" value="y">
                                         <label class="ques-label">Yes</label>
-                                        <input type="radio" name="hair" class="ques-radio" value="n">
+                                        <input type="radio" name="hairf" class="ques-radio" value="n">
                                         <label class="ques-label" >No</label>
                                     </div>
                                     <div>
@@ -630,7 +630,107 @@
                                     <button type="submit" class="btn btn-danger" id="predict-button" name="pcos-predict">Predict PCOS Possibility</button>
                                 </div>
                                 <div class="prediction-result">
-                                    <p>Please submit the form above to get a prediction.</p>
+                                <?php
+                                // $json1=0;
+    if(isset($_POST['pcos-predict'])){
+       
+      $o1= $_POST['regularity'];
+      $o2= $_POST['weight'];
+      $o3= $_POST['hair'];
+      $o4= $_POST['dark'];
+      $o5= $_POST['pimples'];
+      $o6= $_POST['dora'];
+      $o7= $_POST['history'];
+      $o8= $_POST['flow'];
+      $o9= $_POST['oily'];
+      $o10= $_POST['hairf'];
+      $o11= $_POST['food'];
+      $o12= $_POST['exc'];
+      $o13= $_POST['change'];
+      $o14= $_POST['prob'];
+      $o15= $_POST['peer'];
+      $o16= $_POST['diet'];
+      $o17= $_POST['fast'];
+      
+      $var = 'y';
+     
+       $json1 =  file_get_contents('https://3ff03eccff14.ngrok.io/pcos/', false, stream_context_create([
+        'http' => [
+            'method' => 'POST',
+            'header'  => "Content-type: application/x-www-form-urlencoded",
+            'content' => http_build_query([
+            
+        'regular_periods' => 'no',
+        'rapid_weight_gain'=> $o2,
+        'excess_hair'=> $o3,
+        'dark_patches'=> $o4,
+        'pimples' => $o5,
+        'depression_and_anxiety'=> $o6,
+        'diabetic_hypertension_family_history'=> $o7,
+        'body_weight_maintain_difficulty'=> $o8,
+        'oily_skin'=> $o9,
+        'hair_strength_loss'=> $o10,
+        'eat_frequency'=> $o11,
+        'regular_excercise'=> $o12,
+        'sleep_time'=> '3:00am',
+        'wake_time'=> '7:30am',
+        'hostel_stress'=>  $o13,
+        'personal_stress'=> $o14,
+        'peer_pressure'=> $o15,
+        'dietary_stress'=> $o16,
+        'fast_food_frequency'=> $o17
+
+    //     'regular_periods' => 'no',
+    // 'rapid_weight_gain'=> $o2,
+    // 'excess_hair'=> 'y',
+    // 'dark_patches'=> 'y',
+    // 'pimples' => 'y',
+    // 'depression_and_anxiety'=> 'y',
+    // 'diabetic_hypertension_family_history'=> 'y',
+    // 'body_weight_maintain_difficulty'=> 'y',
+    // 'oily_skin'=> 'y',
+    // 'hair_strength_loss'=> 'n',
+    // 'eat_frequency'=> 'hm',
+    // 'regular_excercise'=> 'y',
+    // 'sleep_time'=> '3:00am',
+    // 'wake_time'=> '7:30am',
+    // 'hostel_stress'=> 'y',
+    // 'personal_stress'=> 'y',
+    // 'peer_pressure'=> 'y',
+    // 'dietary_stress'=> 'y',
+    // 'fast_food_frequency'=> 'y'
+            ])
+        ]
+    ]));
+
+    
+    $yummy = json_decode($json1);
+        if ($yummy->pcos=='mb n') {
+           echo "<p>You may not be at the risk of PCOS</p>";
+        }
+       
+        elseif ($yummy->pcos =='mb y') {
+           echo "<p>You may be at the risk of PCOS</p>";
+        }
+
+    }
+     
+    else{
+        echo "<p>Please submit the form above to get a prediction.</p>";
+    }
+   
+    // else {
+    //     $yummy = json_decode($json1);
+    //     if ($yummy->pcos=='mb n') {
+    //        echo "<p>You may not be at the risk of PCOS</p>";
+    //     }
+       
+    //     elseif ($yummy->pcos == 'mb y') {
+    //        echo "<p>You may be at the risk of PCOS</p>";
+    //     }
+     
+
+?>
                                 </div>
                             </div>
                         </div>
