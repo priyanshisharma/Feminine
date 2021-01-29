@@ -562,7 +562,7 @@
     
     $yummy = json_decode($json2);
         if ($yummy->Hinselmann=='0.0') {
-           echo "<p>Hinselmann is predicted to be negetive</p>";
+           echo "<p>Hinselmann is predicted to be negative</p>";
         }
        
         elseif ($yummy->Hinselmann =='1.0') {
@@ -570,14 +570,14 @@
         }
 
         if ($yummy->Cytology=='0.0') {
-            echo "<p>Cytology is predicted to be negetive</p>";
+            echo "<p>Cytology is predicted to be negative</p>";
          }
         
          elseif ($yummy->Cytology =='1.0') {
             echo "<p>Cytology is predicted to be positive</p>";
          }
          if ($yummy->Schiller=='0.0') {
-            echo "<p>Schiller is predicted to be negetive</p>";
+            echo "<p>Schiller is predicted to be negative</p>";
          }
         
          elseif ($yummy->Schiller =='1.0') {
