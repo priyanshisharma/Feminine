@@ -24,7 +24,6 @@ Feminine is an initiative through which we want to build an all-in-one women hea
 
 - Machine Learning
   - Python - Sklearn, Keras, Tensorflow etc. for the ML Model(s)
-  - Microsoft Azure Machine Learning Studio for the ML Model(s)
   - Django REST Framework (for Model Endpoints)
 
 
@@ -38,6 +37,7 @@ Feminine is an initiative through which we want to build an all-in-one women hea
   - MySQL (Database)
 
 - Tools
+  - Microsoft Azure Machine Learning Studio for the ML Model(s)
   - Xampp
   - Git
   - Github
