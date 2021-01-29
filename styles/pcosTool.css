@@ -35,6 +35,10 @@ input[type=number]{
     width:60%;
     margin:2% 20%;
 }
+#cervical-predict{
+    width:60%;
+    margin:2% 20%;
+}
 .prediction-result{
     color:#ff9966;
     padding:3%;
