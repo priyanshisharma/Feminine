@@ -234,20 +234,70 @@
                     <li class="nav-item first mbr-fonts-style"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs1-p_tab0" aria-selected="true"><strong>Breast Cancer Detection</strong></a></li>
                     <li class="nav-item"><a class="nav-link mbr-fonts-style active display-7" role="tab" data-toggle="tab" href="#tabs1-p_tab1" aria-selected="true"><strong>Cervical Cancer Detection</strong></a></li>
                     <li class="nav-item"><a class="nav-link mbr-fonts-style active display-7" role="tab" data-toggle="tab" href="#tabs1-p_tab2" aria-selected="true"><strong>PCOS Detection</strong></a></li>
-                    
-                    
-                    
                 </ul>
+                
                 <div class="tab-content">
                     <div id="tab1" class="tab-pane in active" role="tabpanel">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p class="mbr-text mbr-fonts-style display-7">
-                                    AI tool to detect breast cancer
-                                </p>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-8" style=" margin: auto;">
+                                    <p style="font-size: 20px;">
+                                        We analyse the hispathological image i.e. images of glass tissue slides under a microscope, here tissue samples from lymph 
+                                        nodes in order to detect breast cancer. We will be analysing tissues for:
+                                    </p>
+                                    <br/>
+                                    <p style="font-size: 20px;">
+                                        <strong>Invasive Ductal Carcinoma</strong> -  This is the most common subtype of all breast cancers. Almost 80% of 
+                                        diagnosed breast cancers are of this subtype.
+                                    </p> 
+                                    <p style="font-size: 20px;">
+                                        <strong>Metastatic Cancer</strong> -  A metastatic cancer or metastatic tumor is one that has spread from the site where 
+                                        it started into different area/s of the body.
+                                    </p>
+                                    <br/><br/>
+                                    <ul class="arrow" style="list-style-image: url('assets/images/icon.png');">
+                                        <li>
+                                            <p style="font-size: 23px;">Upload Histopathological Image</p>
+                                            <p>
+                                                Click on the 'Choose Files' button and select a single image of 200x200 for the algorithm. Use jpeg, jpg or png format.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p style="font-size: 23px;">Select Prediction Type</p>
+                                            <p>One of these shall be selected for you by default, you may choose between <strong>Metastatic Cancer</strong> and 
+                                                <strong>Invasive Ductal Carcinoma</strong>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p style="font-size: 23px;">Check Results</p>
+                                            <p>Your results should load automatically. </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4" style=" margin: auto;">
+                                    <img id="selected-image"  width="200"  src="assets/normal.png" alt=""> 
+                                    <div class="progress-bar">
+                                        Ai is Loading...
+                                    </div>
+                                    <h5>Results</h5>
+                                    <ol id='prediction-list'></ol>
+                                    <p>What would you like to detect?</p>
+                                    <input id='met_cancer_input'  type="radio" name="model_type" value="metastatic_cancer" checked>Metastatic Cancer<br>
+                                    <input id='breast_cancer_input'type="radio" name="model_type" value="breast_cancer">Invasive Ductal Carcinoma<br>
+                                    <p>jpeg or png</p>
+                                    <div style="display:flex">
+                                    <div class="hide">
+                                        <input  id="image-selector" type="file" multiple>
+                                    </div>
+                                    <div class="hide"style="display:none">
+                                        <button class="main-button" style="background:#0088e8" id="predict-button">Predict</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </div>    
                     </div>
+                </div>
+                
                     <div id="tab2" class="tab-pane" role="tabpanel">
                         <div class="row">
                             <div class="col-md-12">
@@ -266,9 +316,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    
-                    
                 </div>
             </div>
         </div>
@@ -391,6 +438,19 @@
 <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
 <script src="assets/theme/js/script.js"></script>
 
+<!-- Load jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+<!-- Load TensorFlow.js -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"> </script>
+
+
+<!-- Load the Javascript code -->
+<script src="jscript/met_cancer_classes.js"></script>
+<script src="jscript/breast_cancer_classes.js"></script>
+<script src="jscript/app_startup_code.js"></script>
+<script src="jscript/met_cancer_analyzer.js"></script>
+<script src="jscript/breast_cancer_analyzer.js"></script>
 
 </body>
 </html>
