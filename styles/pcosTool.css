@@ -43,6 +43,8 @@ input[type=number]{
     font-family:'Jost', sans-serif;
     padding:10px;
     border:2px solid #ff9966;
+    width:90%;
+    margin: 3% 5%;
 }
 
 @media(max-width:890px){
