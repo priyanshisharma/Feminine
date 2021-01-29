@@ -38,13 +38,12 @@
 <body>
   
   <section class="menu cid-s48OLK6784" once="menu" id="menu1-h">
-    
-    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+  <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
         <div class="container-fluid">
             <div class="navbar-brand">
                 <span class="navbar-logo">
                     <a href="index.html">
-                        <img src="assets/images/feminine-1-335x335.png" alt="Mobirise" style="height: 5rem;">
+                        <img src="assets/images/feminine-1-335x335.png" alt="login" style="height: 5rem;">
                     </a>
                 </span>
             </div>
@@ -59,24 +58,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="https://mobirise.com">Menu Item 1</a>
+                        <a class="nav-link link text-black display-4" href="index.html#features1-n">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-black display-4" href="index.html#tabs1-p">AI Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-black display-4" href="signup.php">Dashboard</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Menu Item 1</a>
+                        <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Book</a>
                         <div class="dropdown-menu">
-                            <a class="text-black dropdown-item display-4" href="https://mobirise.com">New Item</a>
-                            <a class="text-black dropdown-item display-4" href="https://mobirise.com">New Item</a>
-                            <a class="text-black dropdown-item display-4" href="https://mobirise.com">New Item</a>
+                            <a class="text-black dropdown-item display-4" href="">Lab Appointment</a>
+                            <a class="text-black dropdown-item display-4" href="consult-doc.html">Expert Consultancy</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="https://mobirise.com">Menu Item 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="https://mobirise.com">Menu Item 2</a>
+                        <a class="nav-link link text-black display-4" href="Tracker.php">Period Tracker</a>
                     </li>
                 </ul>
-                
             </div>
         </div>
     </nav>
