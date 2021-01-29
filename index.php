@@ -60,7 +60,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link link text-black dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Book</a>
                         <div class="dropdown-menu">
-                            <a class="text-black dropdown-item display-4" href="">Lab Appointment</a>
+                            <a class="text-black dropdown-item display-4" href="labs.html">Lab Appointment</a>
                             <a class="text-black dropdown-item display-4" href="consult-doc.html">Expert Consultancy</a>
                         </div>
                     </li>
@@ -943,7 +943,7 @@
                             right here at our platform. Keeping the hassle at bay, focusing on oneself!
                         </p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-secondary display-7">Book Now &gt;</a></div>
+                    <div class="mbr-section-btn item-footer mt-2"><a href="labs.html" class="btn item-btn btn-secondary display-7">Book Now &gt;</a></div>
                 </div>
             </div>
             
