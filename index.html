@@ -10,6 +10,7 @@
     
     
     <title>Feminine</title>
+    <link rel="stylesheet" href="styles/breastCancerTool.css">
     <link rel="stylesheet" href="styles/pcosTool.css">
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
     <link rel="stylesheet" href="assets/tether/tether.min.css">
@@ -240,8 +241,8 @@
                 <div class="tab-content">
                     <div id="tab1" class="tab-pane in active" role="tabpanel">
                         <div class="container">
-                            <div class="row">
-                                <div class="col-md-8 breast-tool" style=" margin: auto;">
+                            <div class="row breast-tool">
+                                <div class="col-md-8 " style=" margin: auto;">
                                     <p style="font-size: 20px;">
                                         We analyse the hispathological image i.e. images of glass tissue slides under a microscope, here tissue samples from lymph 
                                         nodes in order to detect breast cancer. We will be analysing tissues for:
@@ -258,21 +259,27 @@
                                     <br/><br/>
                                     <ul class="arrow" style="list-style-image: url('assets/images/icon.png');">
                                         <li>
-                                            <p style="font-size: 23px;">Upload Histopathological Image</p>
+                                            <span style="top:-40px; position:relative;">
+                                            <p class="breast-step" style="font-size: 23px;">Upload Histopathological Image</p>
                                             <p>
                                                 Click on the 'Choose Files' button and select a single image of 200x200 for the algorithm. Use jpeg, jpg or png format.
                                             </p>
+                                            </span>
                                         </li>
                                         <li>
-                                            <p style="font-size: 23px;">Select Prediction Type</p>
+                                            <span style="top:-40px; position:relative;">
+                                            <p class="breast-step" style="font-size: 23px;">Select Prediction Type</p>
                                             <p>One of these shall be selected for you by default, you may choose between <strong>Metastatic Cancer</strong> and 
                                                 <strong>Invasive Ductal Carcinoma</strong>
                                             </p>
+                                            </span>
                                         </li>
                                         <li>
-                                            <p style="font-size: 23px;">Check Results</p>
+                                            <span style="top:-40px; position:relative;">
+                                            <p class="breast-step" style="font-size: 23px;">Check Results</p>
                                             <p>Your results should load automatically. </p>
                                         </li>
+                                        </span>
                                     </ul>
                                 </div>
                                 <div class="col-md-4" style=" margin: auto;">
