@@ -18,6 +18,24 @@ Feminine is an initiative through which we want to create an all-in-one women he
 * Booking Lab/Appointment
 * Video Conferencing for expert consultancy
 
+## Technology Stack
+
+### Web Technology
+
+- Frontend
+  - HTML
+  - CSS
+  - Bootstrap
+  
+- Backend
+  - PHP 
+  - MySQL (Database)
+
+- Tools
+  - Xampp
+  - Git
+  - Github
+
 ### Sample User Credentials
 - For Doctor
   - Username - doctor
