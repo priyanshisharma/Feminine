@@ -159,7 +159,7 @@
                 <div>
                         <form method="post">
                             <div class="form-floating form-field-login">
-                                <label for="u_name">Name</label>
+                                <label for="u_name">Username</label>
                                 <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="u_name">
                             </div>
                             <div class="form-floating form-field-login">

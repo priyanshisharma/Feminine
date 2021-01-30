@@ -130,7 +130,7 @@
                 <div>
                         <form method="post" id="signupForm">
                             <div class="form-floating form-field-login">
-                                <label for="name">Name</label>
+                                <label for="name">Userame</label>
                                 <input type="name" class="form-control" id="u_name" placeholder="Name" name="u_name">
                             </div>
                             <div class="form-floating form-field-login">

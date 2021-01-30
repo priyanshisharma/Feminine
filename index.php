@@ -322,7 +322,7 @@
                                 </p>
                                 <ul class="mbr-text mbr-fonts-style display-7">
                                     <li>
-                                        <strong>Hinselmann test</strong> - This examins the tissues by illuminating and magnifying is using a colposcope.
+                                        <strong>Hinselmann test</strong> - This examines the tissues by illuminating and magnifying is using a colposcope.
                                     </li>
                                     <li>
                                         <strong>Schiller test</strong> - Schiller's test or Schiller's Iodine test is a medical test in which iodine solution
